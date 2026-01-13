@@ -1,0 +1,128 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(246, 241, 234, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-stone-light);
+}
+
+.header-container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 32px;
+    width: auto;
+}
+
+.nav-main {
+    display: none;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .nav-main {
+        display: flex;
+    }
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-charcoal);
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    position: relative;
+    transition: color var(--duration-fast) var(--ease-default);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-brass);
+    transition: width var(--duration-normal) var(--ease-default);
+}
+
+.nav-link:hover {
+    color: var(--color-brass);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.lang-toggle {
+    background: transparent;
+    border: 1.5px solid var(--color-stone-medium);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-charcoal);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-default);
+}
+
+.lang-toggle:hover {
+    border-color: var(--color-brass);
+    color: var(--color-brass);
+}
+
+.btn-sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-small);
+}
+
+.mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    padding: var(--space-2);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-charcoal);
+    transition: all var(--duration-fast) var(--ease-default);
+}
+
+.mobile-menu-toggle:hover span {
+    background: var(--color-brass);
+}

@@ -1,0 +1,29 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: 72px;
+  /* Header height */
+}
+
+/* Smooth scroll offset for anchors */
+:target {
+  scroll-margin-top: 100px;
+}
+
+/* Global section utilities */
+.section-title {
+  font-size: var(--text-h1);
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.section-subtitle {
+  font-size: var(--text-large);
+  color: var(--color-stone-dark);
+  max-width: 600px;
+}
